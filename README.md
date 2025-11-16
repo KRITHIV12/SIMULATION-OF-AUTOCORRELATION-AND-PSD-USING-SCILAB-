@@ -40,34 +40,27 @@ clear all;
 
 // Time vector
 t = 0:0.01:2*%pi;
-
-// Input signal
 x = sin(2*t);
 
-// Plot original signal
 subplot(3,2,1);
 plot(x);
 title("Original Signal");
 
-// Autocorrelation
 au = xcorr(x, x);
 subplot(3,2,2);
 plot(au);
 title("Autocorrelation");
 
-// FFT of Autocorrelation (PSD using Wiener-Khinchin theorem)
 v = fft(au);
 subplot(3,2,3);
 plot(abs(v));
 title("FFT of Autocorrelation (PSD)");
 
-// FFT of original signal
 fw = fft(x);
 subplot(3,2,4);
 plot(fw);
 title("FFT of Signal");
 
-// Power Spectral Density (|X(f)|^2)
 fw2 = (abs(fw)).^2;
 subplot(3,2,5);
 plot(fw2);
@@ -75,7 +68,7 @@ title("Power Spectral Density (|X(f)|^2)");
 ```
 
 ## OUTPUT
-<img width="610" height="460" alt="image" src="https://github.com/user-attachments/assets/b89c34ea-14ce-49bc-89e2-cc50726fa3ff" />
+<img width="756" height="706" alt="image" src="https://github.com/user-attachments/assets/5209bb88-63ab-4dee-bead-602aafa5ee72" />
 
 
 ## RESULT
